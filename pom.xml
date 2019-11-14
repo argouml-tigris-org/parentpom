@@ -40,6 +40,7 @@ that contains the common parts of all ArgoUML projects.
 	<properties>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<compileSource>1.6</compileSource>
+		<github.site.repositoryName>${project.artifactId}</github.site.repositoryName>
 	</properties>
 
 	<!-- Build Settings -->
@@ -243,23 +244,26 @@ that contains the common parts of all ArgoUML projects.
 	<groupId>com.github.github</groupId>
 	<artifactId>site-maven-plugin</artifactId>
 	<version>0.12</version>
+        <configuration>
+          <server>github</server>
+	  <repositoryOwner>argouml-tigris-org</repositoryOwner>
+	  <repositoryName>${github.site.repositoryName}</repositoryName>
+
+          <!-- The commit message -->
+          <message>Building site for ${project.name} ${project.version}
+
+${github.site.repositoryName} ${site.path}
+	  </message>
+          <!-- The location where the site is uploaded -->
+          <path>${site.path}</path>
+          <merge>true</merge>
+        </configuration>
 	<executions>
           <execution>
             <goals>
               <goal>site</goal>
             </goals>
             <phase>site-deploy</phase>
-            <configuration>
-              <server>github</server>
-	      <repositoryOwner>argouml-tigris-org</repositoryOwner>
-	      <repositoryName>${project.artifactId}</repositoryName>
-
-              <!-- The commit message -->
-              <message>Building site for my project</message>
-              <!-- The location where the site is uploaded -->
-              <path>${site.path}</path>
-              <merge>true</merge>
-            </configuration>
           </execution>
 	</executions>
       </plugin>
