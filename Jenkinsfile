@@ -17,11 +17,17 @@ if (env.GERRIT_API_URL == null) {
 }
 
 pipeline {
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '10', daysToKeepStr: '100'))
+  }
+  triggers {
+    snapshotDependencies()
+  }
   agent {
-      docker {
-        image 'maven:3-ibmjava-8'
-        args '-v maven-repo:/.m2'
-      }
+    docker {
+      image 'maven:3-ibmjava-8'
+      args '-v maven-repo:/.m2 -v maven-repo:/root/.m2'
+    }
   }
   environment {
     GERRIT_CREDENTIALS_ID = 'gerrithub-user'
@@ -29,25 +35,41 @@ pipeline {
   stages {
     stage('compile') {
       steps {
-        gerritReview labels: [:], message: """Build starts.
+        gerritReview labels: [Verified:0], message: """Build starts.
 
-Build has two steps:
+Build has these steps:
 1. Compile (corresponding to mvn compile).
 2. Run tests (corresponding to mvn test).
+3. Generate site (corresponding to mvn site).
 
 If these are all successful, it is scored as Verified."""
-        withMaven() {
-          sh 'mvn -B compile'
+        timeout(time:1, unit: 'HOURS') {
+          withMaven() {
+            sh '$MVN_CMD -B compile'
+          }
         }
-        gerritReview labels: [:], message: "Compile done."
+        gerritReview labels: [:], message: "Compiled without error."
       }
     }
     stage('test') {
       steps {
-        withMaven() {
-          sh 'mvn -B test'
+        timeout(time:1, unit: 'HOURS') {
+          withMaven() {
+            sh '$MVN_CMD -B test'
+          }
         }
-        gerritReview labels: [:], message: "Run tests done."
+        gerritReview labels: [:], message: "Tests run without error."
+      }
+    }
+    stage('site') {
+      steps {
+        timeout(time:1, unit: 'HOURS') {
+          withMaven(options: [junitPublisher(disabled: true,
+                                             healthScaleFactor: 0.0)]) {
+            sh '$MVN_CMD -B site'
+          }
+        }
+        gerritReview labels: [:], message: "Site generated without error."
       }
     }
   }
