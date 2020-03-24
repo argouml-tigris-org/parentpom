@@ -377,14 +377,9 @@ ${github.site.repositoryName} ${site.path}
 
 	<!-- Environment Settings -->
 	<issueManagement>
-		<system>Issuezilla</system>
-		<url>http://argouml.tigris.org/project_bugs.html</url>
+		<system>GitHub Issues</system>
+		<url>https://github.com/argouml-tigris-org/${github.site.repositoryName}/issues</url>
 	</issueManagement>
-
-	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://argouml-jenkins1.dyndns.org:8080/</url>
-	</ciManagement>
 
 
 	<repositories>
@@ -398,5 +393,11 @@ ${github.site.repositoryName} ${site.path}
 			</snapshots>
 		</repository>
 	</repositories>
+
+  <scm>
+    <url>https://github.com/argouml-tigris-org/${github.site.repositoryName}</url>
+    <connection>scm:git:https://github.com/argouml-tigris-org/${github.site.repositoryName}.git</connection>
+    <developerConnection>scm:git:ssh://review.gerrithub.io:29418/argouml-tigris-org/${github.site.repositoryName}.git</developerConnection>
+  </scm>
 
 </project>
