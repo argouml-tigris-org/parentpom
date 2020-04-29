@@ -398,9 +398,9 @@
   <repositories>
     <repository>
       <id>argouml</id>
-      <name>ArgoUML Release Repository</name>
+      <name>ArgoUML-Provided Parts Repository (from Tigris)</name>
       <layout>default</layout>
-      <url>http://argouml-downloads.tigris.org/maven2</url>
+      <url>http://argouml-tigris-org.github.io/tigris/maven2</url>
       <snapshots>
 	<enabled>false</enabled>
       </snapshots>
