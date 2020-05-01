@@ -400,7 +400,7 @@
       <id>argouml</id>
       <name>ArgoUML-Provided Parts Repository (from Tigris)</name>
       <layout>default</layout>
-      <url>http://argouml-tigris-org.github.io/tigris/maven2</url>
+      <url>https://argouml-tigris-org.github.io/tigris/maven2</url>
       <snapshots>
 	<enabled>false</enabled>
       </snapshots>
