@@ -53,6 +53,8 @@
   <properties>
     <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
     <compileSource>1.6</compileSource>
+    <github.site.org>https://github.com/argouml-tigris-org</github.site.org>
+    <github.site.pages>https://argouml-tigris-org.github.io</github.site.pages>
     <github.site.repositoryName>${project.artifactId}</github.site.repositoryName>
     <jacoco.version>0.8.5</jacoco.version>
   </properties>
@@ -391,7 +393,7 @@
   <!-- Environment Settings -->
   <issueManagement>
     <system>GitHub Issues</system>
-    <url>https://github.com/argouml-tigris-org/${github.site.repositoryName}/issues</url>
+    <url>${github.site.org}/${github.site.repositoryName}/issues</url>
   </issueManagement>
 
 
@@ -400,7 +402,7 @@
       <id>argouml</id>
       <name>ArgoUML-Provided Parts Repository (from Tigris)</name>
       <layout>default</layout>
-      <url>https://argouml-tigris-org.github.io/tigris/maven2</url>
+      <url>${github.site.pages}/tigris/maven2</url>
       <snapshots>
 	<enabled>false</enabled>
       </snapshots>
@@ -408,9 +410,17 @@
   </repositories>
 
   <scm>
-    <url>https://github.com/argouml-tigris-org/${github.site.repositoryName}</url>
+    <url>${github.site.org}/${github.site.repositoryName}</url>
     <connection>scm:git:https://github.com/argouml-tigris-org/${github.site.repositoryName}.git</connection>
     <developerConnection>scm:git:ssh://review.gerrithub.io:29418/argouml-tigris-org/${github.site.repositoryName}.git</developerConnection>
   </scm>
+
+  <distributionManagement>
+    <site>
+        <id>site-docs</id>
+        <url>${github.site.pages}/${github.site.repositoryName}</url>
+    </site>
+  </distributionManagement>
+
 
 </project>
