@@ -263,6 +263,10 @@
         <configuration>
           <serverId>github</serverId>
           <pubScmUrl>scm:git:${project.scm.url}</pubScmUrl>
+          <!-- There is a problem in jgit in that it can't delete files.
+               See https://issues.apache.org/jira/browse/SCM-925
+           -->
+          <skipDeletedFiles>true</skipDeletedFiles>
           <scmBranch>gh-pages</scmBranch>
           <providerImplementations>
 	    <git>jgit</git>
