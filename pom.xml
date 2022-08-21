@@ -29,6 +29,12 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+	<groupId>org.argouml</groupId>
+	<artifactId>tools</artifactId>
+	<version>${org.argouml.tools.version}</version>
+        <scope>compile</scope>
+      </dependency>
+      <dependency>
         <groupId>easymock</groupId>
         <artifactId>easymock</artifactId>
         <version>2.0</version>
@@ -57,6 +63,7 @@
     <gerrithub.site.org.ssh>ssh://review.gerrithub.io:29418/argouml-tigris-org</gerrithub.site.org.ssh>
     <github.site.pages>https://argouml-tigris-org.github.io</github.site.pages>
     <github.site.repositoryName>${project.artifactId}</github.site.repositoryName>
+    <org.argouml.tools.version>0.35.2-SNAPSHOT</org.argouml.tools.version>
     <jacoco.version>0.8.5</jacoco.version>
   </properties>
 
@@ -144,7 +151,7 @@
 	  <dependency>
 	    <groupId>org.argouml</groupId>
 	    <artifactId>tools</artifactId>
-	    <version>0.35.2-SNAPSHOT</version>
+	    <version>${org.argouml.tools.version}</version>
 	  </dependency>
 	</dependencies>
       </plugin>
