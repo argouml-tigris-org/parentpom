@@ -16,6 +16,23 @@
       "message": "I don\u0027t understand what had happened. Suddenly, the sending of verification from Jenkins didn\u0027t work. That is the reason I have uploaded this many many times. Now it seems to be working again. I think it has something to do with the ssh known hosts and that gerrithug setup have load balancing for the ssh hosts so the hosts change.",
       "revId": "9c618223d061fd7a9933fda2a6b81fdd732b9994",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9325d71f_dc5cea5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1016795
+      },
+      "writtenOn": "2022-08-21T11:05:00Z",
+      "side": 1,
+      "message": "No, it is still not working but at least now I see in gerrithub that the builds start and end.",
+      "revId": "9c618223d061fd7a9933fda2a6b81fdd732b9994",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
