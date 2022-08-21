@@ -16,6 +16,23 @@
       "message": "Now it suddenly worked. I am still not confident in knowing what the problem was and why it now suddenly works. Very strange.",
       "revId": "9e26603916252801febaf6d810e639b595e1db1e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1aaee6c5_115f9e19",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1016795
+      },
+      "writtenOn": "2022-08-21T12:02:31Z",
+      "side": 1,
+      "message": "I have verified that it is possible to build the other argouml projects with this change.",
+      "revId": "9e26603916252801febaf6d810e639b595e1db1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
