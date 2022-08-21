@@ -142,6 +142,10 @@
 	</configuration>
 	<dependencies>
 	  <dependency>
+            <!-- When changing this, make sure to change the pluginRepository
+                 configuration among the pluginRepositories also below to fit
+                 with the changes.
+              -->
 	    <groupId>org.argouml</groupId>
 	    <artifactId>tools</artifactId>
 	    <version>0.35.2-SNAPSHOT</version>
@@ -387,5 +391,26 @@
     </site>
   </distributionManagement>
 
+  <pluginRepositories>
+    <!-- When checkstyle attempts to find the org.argouml:tools it
+         doesn't use the normal repository definition but instead
+         the pluginRepository definition. For this reason it is
+         necessary to add the sonatype snapshot repository in this
+         way.
+         This trick was learned from
+         https://stackoverflow.com/questions/66592470/resolve-dependency-in-checkstyle-plugin
+     -->
+    <pluginRepository>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </pluginRepository>
+  </pluginRepositories>
 
 </project>
