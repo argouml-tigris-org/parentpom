@@ -52,7 +52,7 @@
 
   <properties>
     <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-    <compileSource>1.6</compileSource>
+    <compileSource>1.7</compileSource>
     <github.site.org>https://github.com/argouml-tigris-org</github.site.org>
     <gerrithub.site.org.ssh>ssh://review.gerrithub.io:29418/argouml-tigris-org</gerrithub.site.org.ssh>
     <github.site.pages>https://argouml-tigris-org.github.io</github.site.pages>
