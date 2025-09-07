@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d3ee274_410814be",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1016795
+      },
+      "writtenOn": "2025-09-07T13:26:47Z",
+      "side": 1,
+      "message": "I am sorry to have made so many versions of this and so many builds. I have been using it to develop a CI/CD script to verify that the consequences of these changes are also tested by building and running tests in all other repositories.\n\nNow that is in place.",
+      "revId": "39aea104b0bf62dc4ece75794bc7bb553fcff1e0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
